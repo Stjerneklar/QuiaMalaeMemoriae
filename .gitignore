@@ -328,8 +328,8 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-QuMalMem/QuMalMem/Properties/Settings.Designer.cs
-QuMalMem/QuMalMem/Properties/Settings.settings
-QuMalMem/QuMalMem/Web.Release.config
-QuMalMem/QuMalMem/Web.config
-QuMalMem/QuMalMem/Web.Debug.config
+# QuMalMem/QuMalMem/Properties/Settings.Designer.cs
+# QuMalMem/QuMalMem/Properties/Settings.settings
+# QuMalMem/QuMalMem/Web.Release.config
+# QuMalMem/QuMalMem/Web.config
+# QuMalMem/QuMalMem/Web.Debug.config
