@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="QuMalMem._Default" %>
+﻿<%@ Page Title="QuMalMem" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="QuMalMem._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -14,9 +14,13 @@
         <div class="col-md-4">
             <h2>Simple Code Caller</h2>
             <asp:DropDownList ID="DropDownSCC" runat="server" AutoPostBack="True">
-                <asp:ListItem Text="Method to Call" Selected="True" />
+                <asp:ListItem Text="Method to Call"/>
                 <asp:ListItem Text="BasicTypes" />
                 <asp:ListItem Text="CountryCodes" />
+                <asp:ListItem Text="AbstractShapes" />
+                <asp:ListItem Text="BirdInheritance" />
+                <asp:ListItem Text="Excercise1" />
+                <asp:ListItem Text="MyFirstObject" />
             </asp:DropDownList>
         </div>
         <div class="col-md-8">

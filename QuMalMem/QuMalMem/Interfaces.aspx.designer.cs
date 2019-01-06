@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuMalMem {
+namespace InterfacePlay {
     
     
-    public partial class AbstractShapes {
+    public partial class Interfaces {
         
         /// <summary>
         /// ListBox1 control.

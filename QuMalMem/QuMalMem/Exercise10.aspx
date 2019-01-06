@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Exercise10.aspx.cs" Inherits="Exercise10.Exercise10" %>
+﻿<%@ Page Title="QuMalMem - Excercise 10" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Exercise10.aspx.cs" Inherits="Exercise10.Exercise10" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+            <div>
         </div>
         <asp:ListBox ID="ListBox1" runat="server" Height="295px" Width="552px"></asp:ListBox>
         <br />
@@ -26,6 +19,4 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Sort em" />
 &nbsp;
         <br />
-    </form>
-</body>
-</html>
+</asp:Content>

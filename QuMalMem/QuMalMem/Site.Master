@@ -50,19 +50,14 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/AbstractShapes">AbstShapes</a></li>
-                        <li><a runat="server" href="~/BirdInheritance">BirdInherit</a></li>
-                        <li><a runat="server" href="~/CountryCode">CountryCode(Updated)</a></li>
-                        <!--
-                        <li><a runat="server" href="~/Exercise">Exer</a></li>
-                        <li><a runat="server" href="~/Exercise10">Exer10</a></li>
-                        <li><a runat="server" href="~/GitDemoApp">GitDemoApp</a></li>
-                        <li><a runat="server" href="~/InterfacePlay">InterfacePlay</a></li>
-                        <li><a runat="server" href="~/MyFirstObjectApp">MyFirstObjectApp</a></li>
-                        <li><a runat="server" href="~/ReminderSystem">RemSys</a></li>
-                        <li><a runat="server" href="~/SessionFish">SessionFish</a></li>
-                        <li><a runat="server" href="~/WebApplication1">WebApp1</a></li>
-                        -->
+                        <li><a runat="server" href="~/">Simple Code Caller</a></li>
+                        <li><a runat="server" href="~/ArrayPlay">ArrayPlay</a></li>
+                        <li><a runat="server" href="~/Exercise10">Exercise10</a></li>
+                        <li><a runat="server" href="~/Interfaces">InterfacePlay</a></li>
+                        <li><a runat="server" href="~/SessionFishPage">SessionFish</a></li>
+                         <!-- <li><a runat="server" href="~/ReminderSystem"> ReminderSystem</a></li>-->
+                        <li><a runat="server" href="~/WebForm2">WebApp1</a></li>
+                        <li><a runat="server" href="~/ListBoxExample">ListBoxExample</a></li>
                     </ul>
                 </div>
             </div>

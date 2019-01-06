@@ -14,7 +14,7 @@ namespace ReminderSystem
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.SendEmail("tuje@cphbusiness.dk", "Reminder", "We are looking forward to see you...");
+            p.SendEmail("anemailadress", "Reminder", "We are looking forward to see you...");
 
             string resp = p.SendSms("4511223344", "This is a message2", "Santa");
             Console.WriteLine(resp);

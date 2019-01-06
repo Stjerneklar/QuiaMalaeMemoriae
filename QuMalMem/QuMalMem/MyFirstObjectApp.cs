@@ -122,4 +122,53 @@ namespace MyFirstObjectApp
             return a + "<-line->" + b;
         }
     }
+
+    class MyFirstObjectDemo
+    {
+        public static List<string> Demo()
+        {
+            List<string> output = new List<string>();
+
+            Circle c = new Circle(new Point(3,5), 14);
+            output.Add(c.ToString());
+            output.Add("Diameter:" + c.Diameter);
+            output.Add("Area:" + c.Area);
+            //Console.ReadLine();
+
+            Point p = new Point();
+
+
+            Point p1 = new Point();
+            Point p2 = new Point();
+
+            output.Add("my first point is " + p1.ToString());
+            output.Add("my second point is " + p2);
+
+            p1.IncrementX();
+
+            output.Add("first after increment x: " + p1);
+            p1.IncrementX();
+            p1.IncrementX();
+            p1.IncrementX();
+            p1.IncrementX();
+            output.Add("first after more increments: " + p1);
+
+            p2.SetCoords(2, 7);
+            output.Add("p1:" + p1 + " p2:" + p2);
+
+            Point p3 = new Point(5, 67);
+            output.Add("p1:" + p1 + " p2:" + p2+ " p3:"+p3);
+
+
+            Line myLine = new Line(p1, p3);
+            output.Add("myLine is: " + myLine);
+            p1.IncrementX();
+            output.Add("myLine is: " + myLine);
+
+            myLine.MoveX(-2);
+            output.Add("myLine is: " + myLine);
+
+            return output;
+        }
+    }
 }

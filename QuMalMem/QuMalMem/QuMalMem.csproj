@@ -105,10 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AbstractShapes.aspx" />
     <Content Include="ArrayPlay.aspx" />
-    <Content Include="BirdInheritance.aspx" />
-    <Content Include="CountryCode.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -117,7 +114,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Exercise10.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="FishFront.aspx" />
+    <Content Include="SessionFishPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -128,7 +125,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Interfaces.aspx" />
     <Content Include="WebForm2.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,31 +177,10 @@
     </Compile>
     <Compile Include="BasicTypes.cs" />
     <Compile Include="BirdInheritance.cs" />
-    <Compile Include="AbstractShapes.aspx.cs">
-      <DependentUpon>AbstractShapes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AbstractShapes.aspx.designer.cs">
-      <DependentUpon>AbstractShapes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AbstractShapes.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BirdInheritance.aspx.cs">
-      <DependentUpon>BirdInheritance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BirdInheritance.aspx.designer.cs">
-      <DependentUpon>BirdInheritance.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces.cs" />
-    <Compile Include="CountryCode.aspx.cs">
-      <DependentUpon>CountryCode.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CountryCode.aspx.designer.cs">
-      <DependentUpon>CountryCode.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CountryCodeApp.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -223,12 +199,12 @@
       <DependentUpon>Exercise10.aspx</DependentUpon>
     </Compile>
     <Compile Include="SessionFishApp.cs" />
-    <Compile Include="FishFront.aspx.cs">
-      <DependentUpon>FishFront.aspx</DependentUpon>
+    <Compile Include="SessionFishPage.aspx.cs">
+      <DependentUpon>SessionFishPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FishFront.aspx.designer.cs">
-      <DependentUpon>FishFront.aspx</DependentUpon>
+    <Compile Include="SessionFishPage.aspx.designer.cs">
+      <DependentUpon>SessionFishPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,8 +216,7 @@
     <Compile Include="ListBoxExample.aspx.designer.cs">
       <DependentUpon>ListBoxExample.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyFirstAppProgram.cs" />
-    <Compile Include="FirstObjectApp.cs" />
+    <Compile Include="MyFirstObjectApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -270,12 +245,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Interfaces.aspx.cs">
+      <DependentUpon>Interfaces.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Interfaces.aspx.designer.cs">
+      <DependentUpon>Interfaces.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

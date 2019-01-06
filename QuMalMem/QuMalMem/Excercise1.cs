@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Exercise
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static List<string> Main() //args param removed due to lack of use
         {
-            Console.WriteLine("plus operator: " + Math.Add(2, 3));
+            List<string> output = new List<string>();
+            
+            output.Add("plus operator: " + Math.Add(2, 3));
             Console.WriteLine("div operator: " + Math.Divide(2, 3));
 
             Book b1 = new Book( // example with publisher given
@@ -23,16 +25,18 @@ namespace Exercise
                 "Joseph Albahari and Ben Albahari", 
                 "9780596527570");
 
-            b1.DisplayBook();
-            b2.DisplayBook();
+            output.Add( b1.DisplayBook() );
+            output.Add( b2.DisplayBook() );
 
             b1.Author = "Peter";
             // b1.Title = "asdf";
-            b1.DisplayBook();
 
+            //b1.DisplayBook()
+            output.Add( b1.DisplayBook() );
 
-            Console.WriteLine("Book1 title: "+b1.Title);
+            output.Add("Book1 title: "+b1.Title);
 
+            return output;
 
         }
     }
@@ -58,9 +62,10 @@ namespace Exercise
             this.Publisher = publisher;
         }
 
-        public void DisplayBook()
+        public string DisplayBook()
         {
-            Console.WriteLine(this.ToString());
+            //Console.WriteLine(this.ToString());
+            return this.ToString();
         }
 
         public override string ToString()

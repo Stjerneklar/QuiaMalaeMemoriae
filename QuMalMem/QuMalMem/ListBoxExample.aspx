@@ -1,15 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListBoxExample.aspx.cs" Inherits="WebApplication1.ListBoxExample" %>
+﻿<%@ Page Title="QuMalMem - ListBox Example" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListBoxExample.aspx.cs" Inherits="WebApplication1.ListBoxExample" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Example ListBox</h1>
-    <form id="form1" runat="server">
         <div>
         </div>
         <asp:TextBox ID="TextBoxInput" runat="server"></asp:TextBox>
@@ -48,6 +40,4 @@
         <br />
         <asp:ListBox ID="ListBox2" runat="server" Height="167px" Width="412px"></asp:ListBox>
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
-    </form>
-</body>
-</html>
+</asp:Content>
