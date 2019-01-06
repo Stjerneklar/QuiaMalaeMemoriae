@@ -11,12 +11,9 @@ namespace QuMalMem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            literal1.Text = ConsoleApp1.BasicTypes("5");
-
-            literal1.Text += "Now for Country Codes:<hr>";
-
-            literal1.Text += ConsoleApp1.CountryCode("dk");
-            literal1.Text += ConsoleApp1.CountryCode("dK"); //also works since we lowercase inputs 
+            //basics: 
+            literal1.Text += CountryCodeApp.CountryCode("dk");
+            literal1.Text += CountryCodeApp.CountryCode("dK"); //also works since we lowercase inputs 
 
             literal1.Text += "<hr>";
 
@@ -29,27 +26,26 @@ namespace QuMalMem
             int i = 0;
             while (true)
             {
-                string result = ConsoleApp1.CountryCodeASKW(cCodes[i]);
+                string result = CountryCodeApp.CountryCodeASKW(cCodes[i]);
 
                 if (result == "exit")
                 {
-                    literal1.Text += ConsoleApp1.CountryCode(cCodes[i]);
+                    literal1.Text += CountryCodeApp.CountryCode(cCodes[i]);
                     break;
                 }
                 else
                 {
-                    literal1.Text += ConsoleApp1.CountryCode(cCodes[i]);
+                    literal1.Text += CountryCodeApp.CountryCode(cCodes[i]);
                     i++;
                 }
-            }
-            
+            }           
 
             literal1.Text += "<hr>alt 1:<hr>";
 
             //CountryCode Working alternative implementation
             foreach (string cString in cCodes)
             {
-                string result = ConsoleApp1.CountryCodeASKW(cString);
+                string result = CountryCodeApp.CountryCodeASKW(cString);
                 literal1.Text += result;
                 if (result == "exit") {
                     break;                    
@@ -59,14 +55,15 @@ namespace QuMalMem
             literal1.Text += "<hr>alt 2:<hr>";
 
             //CountryCode 2nd alternative implementation using string array overload 
-            literal1.Text += ConsoleApp1.CountryCodeASKW(cCodes);
+            literal1.Text += CountryCodeApp.CountryCodeASKW(cCodes);
 
             literal1.Text += "<hr>alt 3:<hr>";
 
             //CountryCode 3rd alternative implementation using list of strings made from the existing string array
-            literal1.Text += ConsoleApp1.CountryCodeASKW(new List<string>(cCodes));
+            literal1.Text += CountryCodeApp.CountryCodeASKW(new List<string>(cCodes));
+
             literal1.Text += "<hr>alt 4:<hr>";
-            literal1.Text += ConsoleApp1.CountryCodeASKW2(new List<string>(cCodes));
+            literal1.Text += CountryCodeApp.CountryCodeASKW2(new List<string>(cCodes));
         }
     }
 }

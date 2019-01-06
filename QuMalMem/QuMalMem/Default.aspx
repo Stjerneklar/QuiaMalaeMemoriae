@@ -11,11 +11,18 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/RH1ekuvSYzE?controls=0&amp;start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="col-md-4">
+            <h2>Simple Code Caller</h2>
+            <asp:DropDownList ID="DropDownSCC" runat="server" AutoPostBack="True">
+                <asp:ListItem Text="Method to Call" Selected="True" />
+                <asp:ListItem Text="BasicTypes" />
+                <asp:ListItem Text="CountryCodes" />
+            </asp:DropDownList>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-8">
+            <h2>SCC Results Display</h2>
+            <asp:Literal ID="LiteralResults" Text="..." runat="server" />
+            <asp:ListBox ID="ListBoxResults" runat="server"></asp:ListBox>
         </div>
     </div>
 

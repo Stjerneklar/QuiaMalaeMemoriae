@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/AbstractShapes">AbstShapes</a></li>
                         <li><a runat="server" href="~/BirdInheritance">BirdInherit</a></li>
-                        <li><a runat="server" href="~/ConsoleApp">Console&CountryApp(Updated)</a></li>
+                        <li><a runat="server" href="~/CountryCode">CountryCode(Updated)</a></li>
                         <!--
                         <li><a runat="server" href="~/Exercise">Exer</a></li>
                         <li><a runat="server" href="~/Exercise10">Exer10</a></li>
