@@ -10,3 +10,8 @@ Currently contains
 - a converted ConsoleApp1(Basic Types) 
 - an expanded upon CountryCode exploring the use of lists and different code flows.
 - all the other examples but i havent hooked them up yet
+
+
+Would you fork me? 
+
+I'd fork me.
