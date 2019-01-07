@@ -10,7 +10,7 @@ namespace QuMalMem
             //reset
             LiteralResults.Text = "";
             ListBoxResults.Items.Clear();
-            switch (DropDownSCC.Text)
+            switch (ListBoxSCC.Text)
             {
                 case "BasicTypes":
                     LiteralResults.Text = BasicTypes.Main("5");

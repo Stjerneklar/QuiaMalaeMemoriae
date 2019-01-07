@@ -11,14 +11,34 @@ namespace Exercise10
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ListBox1.Items.Clear();
+        }
 
-         
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            ListBox1.DataSource = AddToListBoxASKW();
+            ListBox1.DataBind();
+        }
 
+        public List<int> AddToListBoxASKW() 
+        {
+            List<int> Lint = new List<int>();
+
+            Lint.Add(Int32.Parse(TextBox1.Text));
+            Lint.Add(Int32.Parse(TextBox2.Text));
+            Lint.Add(Int32.Parse(TextBox3.Text));
+            Lint.Add(Int32.Parse(TextBox4.Text));
+            Lint.Add(Int32.Parse(TextBox5.Text));
+
+            Lint.Sort();
+
+            return Lint;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             int[] myInts = new int[5];
+            
             myInts[0] = Int32.Parse(TextBox1.Text);
             myInts[1] = Int32.Parse(TextBox2.Text);
             myInts[2] = Int32.Parse(TextBox3.Text);

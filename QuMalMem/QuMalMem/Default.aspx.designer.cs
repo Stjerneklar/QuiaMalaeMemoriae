@@ -13,13 +13,13 @@ namespace QuMalMem {
     public partial class _Default {
         
         /// <summary>
-        /// DropDownSCC control.
+        /// ListBoxSCC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownSCC;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxSCC;
         
         /// <summary>
         /// LiteralResults control.

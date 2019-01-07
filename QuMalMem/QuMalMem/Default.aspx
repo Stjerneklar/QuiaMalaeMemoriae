@@ -13,15 +13,15 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Simple Code Caller</h2>
-            <asp:DropDownList ID="DropDownSCC" runat="server" AutoPostBack="True">
-                <asp:ListItem Text="Method to Call"/>
-                <asp:ListItem Text="BasicTypes" />
-                <asp:ListItem Text="CountryCodes" />
-                <asp:ListItem Text="AbstractShapes" />
-                <asp:ListItem Text="BirdInheritance" />
-                <asp:ListItem Text="Excercise1" />
-                <asp:ListItem Text="MyFirstObject" />
-            </asp:DropDownList>
+            <asp:ListBox ID="ListBoxSCC" runat="server" AutoPostBack="True">
+                <asp:ListItem Text="- select -"                 Value=""/>
+                <asp:ListItem Text="BasicTypes"                 Value="BasicTypes"/>
+                <asp:ListItem Text="CountryCodes (Customized)"  Value="CountryCodes"/>
+                <asp:ListItem Text="AbstractShapes"             Value="AbstractShapes"/>
+                <asp:ListItem Text="BirdInheritance"            Value="BirdInheritance"/>
+                <asp:ListItem Text="Excercise1"                 Value="Excercise1"/>
+                <asp:ListItem Text="MyFirstObject"              Value="MyFirstObject"/>
+            </asp:ListBox>
         </div>
         <div class="col-md-8">
             <h2>SCC Results Display</h2>

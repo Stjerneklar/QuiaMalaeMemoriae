@@ -10,13 +10,14 @@
         <br />
         <br />
         <br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server">5</asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server">4</asp:TextBox>
+        <asp:TextBox ID="TextBox3" runat="server" Text="1"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server">2</asp:TextBox>
+        <asp:TextBox ID="TextBox5" runat="server">3</asp:TextBox>
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Sort em" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="ASKW Sort em" />
 &nbsp;
         <br />
 </asp:Content>

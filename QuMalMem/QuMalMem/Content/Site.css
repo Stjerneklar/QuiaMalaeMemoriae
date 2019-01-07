@@ -1,7 +1,7 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 120px;
-    padding-bottom: 20px;
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
 
 /* Wrapping element */
@@ -12,15 +12,26 @@ body {
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+input {
+    background: darkslategray;
+    border: 2px solid black;
+    color: black;
+    padding: 5px;
 }
 
-small { 
-    color:transparent;
+select,
+textarea {
+    width: 100%;
+    background: transparent;
+    color: white;
+    min-height: 400px;
+    overflow: auto;
 }
+
+small {
+    color: transparent;
+}
+
 h1 small {
     color: white;
 }
@@ -35,4 +46,30 @@ h1 small {
     .body-content {
         padding: 0;
     }
+}
+
+html {
+    background-image: url(/img/3.png);
+    background-repeat: none;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    background: #000000f2;
+    min-height: 100%;
+}
+
+.jumbotron {
+    background: none;
+    padding: 0 !important;
+    margin: 0;
+}
+
+hr {
+    border-color: transparent;
+}
+
+.body-content {
+    color: white;
 }
