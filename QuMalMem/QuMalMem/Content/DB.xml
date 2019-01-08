@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StoryParts>
-  <StoryPart id="0" value="In darkness, I shall be light" type="quote" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="1" value="In times of doubt, I shall keep faith" type="quote" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="2" value="In throes of wrath, I shall hone my craft" type="quote" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="3" value="In vengeance, I shall have no mercy" type="quote" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="4" value="In the midst of battle, I shall have no fear" type="quote" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="5" value="In the face of death, I shall have no remorse﻿" type="quote" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="0" value="In darkness, I shall be light" type="quotes" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="1" value="In times of doubt, I shall keep faith" type="quotes" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="2" value="In throes of wrath, I shall hone my craft" type="quotes" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="3" value="In vengeance, I shall have no mercy" type="quotes" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="4" value="In the midst of battle, I shall have no fear" type="quotes" picked="0" pickable="0">  </StoryPart>
+  <StoryPart id="5" value="In the face of death, I shall have no remorse﻿" type="quotes" picked="0" pickable="0">  </StoryPart>
 </StoryParts>

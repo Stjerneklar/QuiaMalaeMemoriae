@@ -65,19 +65,19 @@ namespace QuMalMem
                 }
 
                 return Parts;
-            }          
-        }
+            }                  
 
-        //second iteration - list manipulation instead of data selection/query/where to eg get parts by type.
-        public static List<Storypart> PartsByType(string typeofpart) //filter master parts list down to those of the requested type
-        {
-            List<Storypart> Parts = new List<Storypart>(
-                Allparts.FindAll(
-                    storypart => storypart.spType.Contains(typeofpart)
-                    )
-            );
+            //second iteration - list manipulation instead of data selection/query/where to eg get parts by type.
+            public static List<Storypart> PartsByType(string typeofpart) //filter master parts list down to those of the requested type
+            {
+                List<Storypart> Parts = new List<Storypart>(
+                    Allparts.FindAll(
+                        storypart => storypart.spType.Contains(typeofpart)
+                        )
+                );
+                return Parts;
+            }
 
-            return Parts;
         }
 
         private static List<Storypart> Allparts = AllpartsGetter();   //like that i guess @ the line below. [went from using what is now allpartsgetter (theoretically) each time, to get it once... i think atleast? okay toot ired.
@@ -185,11 +185,7 @@ namespace QuMalMem
             }
             public override string ToString()
             {
-                string output = "This is the '" + this.spValue + "' value for the type '" + this.spType + "<br>";
-                output += "It has been picked " + this.timesPicked + " times, ";
-                output += " offered " + this.timesPickable + " times, ";
-                output += "and passed on " + this.timesNotPicked + " times";
-                return output;
+                return this.spValue;
             }
 
         }
