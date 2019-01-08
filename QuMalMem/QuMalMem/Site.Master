@@ -51,13 +51,13 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Simple Code Caller</a></li>
-                        <li><a runat="server" href="~/ArrayPlay">ArrayPlay</a></li>
-                        <li><a runat="server" href="~/Exercise10">Exercise10 (Customized)</a></li>
-                        <li><a runat="server" href="~/Interfaces">InterfacePlay</a></li>
-                        <li><a runat="server" href="~/SessionFishPage">SessionFish</a></li>
-                         <!-- <li><a runat="server" href="~/ReminderSystem"> ReminderSystem</a></li>-->
-                        <li><a runat="server" href="~/WebForm2">WebApp1</a></li>
-                        <li><a runat="server" href="~/ListBoxExample">ListBoxExample</a></li>
+                        <li><a runat="server" href="~/Exercises/ArrayPlay">ArrayPlay</a></li>
+                        <li><a runat="server" href="~/Exercises/Exercise10">Exercise10 (Customized)</a></li>
+                        <li><a runat="server" href="~/Exercises/Interfaces">InterfacePlay</a></li>
+                        <li><a runat="server" href="~/Exercises/SessionFishPage">SessionFish</a></li>
+                         <!-- <li><a runat="server" href="~/Exercises/ReminderSystem"> ReminderSystem</a></li>-->
+                        <li><a runat="server" href="~/Exercises/WebForm2">WebApp1</a></li>
+                        <li><a runat="server" href="~/Exercises/ListBoxExample">ListBoxExample</a></li>
                     </ul>
                 </div>
             </div>

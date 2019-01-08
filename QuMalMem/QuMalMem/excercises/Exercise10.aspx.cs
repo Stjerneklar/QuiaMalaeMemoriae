@@ -68,5 +68,31 @@ namespace Exercise10
                 ListBox1.Items.Add(doginfo);
             }
         }
+
+        /*changed to use instantiated+filled(rather than seperately .add'ing) list
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            List<Dog> Dogs = new List<Dog>
+            {
+                new Dog(){ name = "Sylvester", Weight=8 },
+                new Dog(){ name = "Whiskers", Age=2 },
+                new Dog(){ name = "Sasha", Age=14 }
+            };
+
+
+            List<Dog> Dogs = new List<Dog> { };
+            Dog[] dogs = new Dog[3];
+            dogs[0] = new Dog("Milo", 26);
+            dogs[1] = new Dog("Frisky", 10);
+            dogs[2] = new Dog("Laika", 50);
+
+            foreach (Dog d in dogs)
+            {
+                string doginfo = d.Name + " " + d.Weight + " kg";
+                ListBox1.Items.Add(doginfo);
+            }
+        }
+        //fails due to lack of ienumerable and private values?
+        */
     }
 }

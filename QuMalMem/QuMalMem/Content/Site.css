@@ -73,3 +73,40 @@ hr {
 .body-content {
     color: white;
 }
+
+/*
+
+body {
+    background: #33262e;
+    color: white;
+}
+
+.jumbotron {
+    background: darkslategrey;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+table {
+    width: 100%;
+}
+
+table, td, th {
+    border: none;
+}
+
+tr {
+    border-bottom: 1px solid darkslategrey;
+}
+
+input {
+    background: transparent;
+    border: 0;
+    outline: 1px solid white;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+    */

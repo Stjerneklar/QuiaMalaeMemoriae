@@ -35,6 +35,11 @@ namespace QuMalMem
                     ListBoxResults.DataSource = MyFirstObjectApp.MyFirstObjectDemo.Demo();
                     ListBoxResults.DataBind();
                     break;
+                case "StoryTeller":
+                    //ListBoxResults.DataSource = StoryTeller.XmlDataLayer.LoadParts("quotes");
+                    ListBoxResults.DataSource = StoryTeller.XmlDataLayer.PartsByType("quotes");
+                    ListBoxResults.DataBind();
+                    break;
             }            
         }
     }
