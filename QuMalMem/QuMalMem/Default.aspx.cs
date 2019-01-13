@@ -7,40 +7,53 @@ namespace QuMalMem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //reset
-            LiteralResults.Text = "";
-            ListBoxResults.Items.Clear();
+            //ListBoxResults.Items.Clear();
+            ListBoxResults.DataSource = null;
             switch (ListBoxSCC.Text)
             {
+                case "StoryTellerA":
+                    ListBoxResults.DataSource = StoryTeller.StoryXDL.Allparts;
+                    break;
+                case "StoryTellerB":
+                    ListBoxResults.DataSource = StoryTeller.StoryXDL.GetChoices(3, "quotes");
+                    ListBoxResults.AutoPostBack = true;
+                    break;
+                case "StoryTellerC":
+                    ListBoxResults.DataSource = StoryTeller.StoryXDL.OfType("myquotes");
+                    break;
                 case "BasicTypes":
-                    LiteralResults.Text = BasicTypes.Main("5");
+                    ListBoxResults.DataSource = BasicTypes.Main("5");
                     break;
                 case "CountryCodes":
                     ListBoxResults.DataSource = CountryCodeApp.Demo();
-                    ListBoxResults.DataBind();
                     break;
                 case "AbstractShapes":
                     ListBoxResults.DataSource = AbstractShapesCode.Demo();
-                    ListBoxResults.DataBind();
                     break;
                 case "BirdInheritance":
                     ListBoxResults.DataSource = BirdDemo.Demo();
-                    ListBoxResults.DataBind();
                     break;
                 case "Excercise1":
                     ListBoxResults.DataSource = Exercise.Program.Main();
-                    ListBoxResults.DataBind();
                     break;
                 case "MyFirstObject":
                     ListBoxResults.DataSource = MyFirstObjectApp.MyFirstObjectDemo.Demo();
-                    ListBoxResults.DataBind();
                     break;
-                case "StoryTeller":
-                    //ListBoxResults.DataSource = StoryTeller.XmlDataLayer.LoadParts("quotes");
-                    ListBoxResults.DataSource = StoryTeller.XmlDataLayer.PartsByType("quotes");
-                    ListBoxResults.DataBind();
-                    break;
-            }            
+            }
+            ListBoxResults.DataBind();
+        }
+        protected void ListBoxResults_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = ListBoxResults.SelectedIndex.ToString();
+
+            foreach (StoryTeller.StoryPart sp in StoryTeller.StoryXDL.Allparts)
+            {
+                if (sp.Id == Int32.Parse(id))
+                {
+                    sp.TimesPicked++;
+                }
+            }
+            StoryTeller.StoryXDL.UpdateAll();
         }
     }
 }

@@ -119,8 +119,8 @@ namespace QuMalMem
             List<string> output = new List<string>();
 
             //basics: 
-            output.Add(CountryCodeApp.CountryCode("dk"));
-            output.Add(CountryCodeApp.CountryCode("Dk")); //also works since we lowercase inputs 
+            output.Add(CountryCode("dk"));
+            output.Add(CountryCode("Dk")); //also works since we lowercase inputs 
 
             output.Add("");
 
@@ -133,16 +133,16 @@ namespace QuMalMem
             int i = 0;
             while (true)
             {
-                string result = CountryCodeApp.CountryCodeASKW(cCodes[i]);
+                string result = CountryCodeASKW(cCodes[i]);
 
                 if (result == "exit")
                 {
-                    output.Add( CountryCodeApp.CountryCode(cCodes[i]));
+                    output.Add( CountryCode(cCodes[i]));
                     break;
                 }
                 else
                 {
-                    output.Add( CountryCodeApp.CountryCode(cCodes[i]));
+                    output.Add( CountryCode(cCodes[i]));
                     i++;
                 }
             }
@@ -152,7 +152,7 @@ namespace QuMalMem
             //CountryCode Working alternative implementation
             foreach (string cString in cCodes)
             {
-                string result = CountryCodeApp.CountryCodeASKW(cString);
+                string result = CountryCodeASKW(cString);
                 output.Add(result);
                 if (result == "exit")
                 {
@@ -163,15 +163,15 @@ namespace QuMalMem
             output.Add( "alt 2:");
 
             //CountryCode 2nd alternative implementation using string array overload 
-            output.Add( CountryCodeApp.CountryCodeASKW(cCodes));
+            output.Add( CountryCodeASKW(cCodes));
 
             output.Add( "alt 3:");
 
             //CountryCode 3rd alternative implementation using list of strings made from the existing string array
-            output.Add( CountryCodeApp.CountryCodeASKW(new List<string>(cCodes)));
+            output.Add( CountryCodeASKW(new List<string>(cCodes)));
 
             output.Add( "alt 4:");
-            output.Add( CountryCodeApp.CountryCodeASKW2(new List<string>(cCodes)));
+            output.Add( CountryCodeASKW2(new List<string>(cCodes)));
 
             return output;
         }

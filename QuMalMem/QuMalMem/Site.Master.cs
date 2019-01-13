@@ -13,5 +13,14 @@ namespace QuMalMem
         {
 
         }
+
+        public int RngBackgroundNumber()
+        {
+            List<int> Lint = new List<int>() { 1,2,3,4,5,6,7,8,9,10 };
+
+            StoryTeller.Shuffle(Lint);
+
+            return Lint.First();
+        }
     }
 }

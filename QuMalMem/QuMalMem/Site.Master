@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - QuMalMem</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -15,8 +15,8 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-</head>
-<body>
+</head> 
+<body class="fade-in-top">    
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -37,7 +37,11 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+                                             
+        <!--<script type="text/javascript" src="/Scripts/jquery.smoothState.min.js"></script>-->
+        <script type="text/javascript" src="/Scripts/SwaggaScript.js"></script>
+        
+        <!--<div id="main">-->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -50,19 +54,18 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Simple Code Caller</a></li>
-                        <li><a runat="server" href="~/Exercises/ArrayPlay">ArrayPlay</a></li>
-                        <li><a runat="server" href="~/Exercises/Exercise10">Exercise10 (Customized)</a></li>
-                        <li><a runat="server" href="~/Exercises/Interfaces">InterfacePlay</a></li>
-                        <li><a runat="server" href="~/Exercises/SessionFishPage">SessionFish</a></li>
-                         <!-- <li><a runat="server" href="~/Exercises/ReminderSystem"> ReminderSystem</a></li>-->
-                        <li><a runat="server" href="~/Exercises/WebForm2">WebApp1</a></li>
-                        <li><a runat="server" href="~/Exercises/ListBoxExample">ListBoxExample</a></li>
+                        <li><a runat="server" href="~/excercises/ArrayPlay">ArrayPlay</a></li>
+                        <li><a runat="server" href="~/excercises/Exercise10">Exercise10 (Customized)</a></li>
+                        <li><a runat="server" href="~/excercises/Interfaces">InterfacePlay</a></li>
+                        <li><a runat="server" href="~/excercises/SessionFishPage">SessionFish</a></li>
+                         <!-- <li><a runat="server" href="~/exercises/ReminderSystem"> ReminderSystem</a></li>-->
+                        <li><a runat="server" href="~/excercises/WebForm2">WebApp1</a></li>
+                        <li><a runat="server" href="~/excercises/ListBoxExample">ListBoxExample</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="container body-content ">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
@@ -70,6 +73,7 @@
                 <p>!&copy; <%: DateTime.Now.Year %> - ASKW.DK </p>
             </footer>
         </div>
+    <!--</div> -->
 
     </form>
 </body>

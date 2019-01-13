@@ -1,9 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StoryParts>
-  <StoryPart id="0" value="In darkness, I shall be light" type="quotes" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="1" value="In times of doubt, I shall keep faith" type="quotes" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="2" value="In throes of wrath, I shall hone my craft" type="quotes" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="3" value="In vengeance, I shall have no mercy" type="quotes" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="4" value="In the midst of battle, I shall have no fear" type="quotes" picked="0" pickable="0">  </StoryPart>
-  <StoryPart id="5" value="In the face of death, I shall have no remorse﻿" type="quotes" picked="0" pickable="0">  </StoryPart>
-</StoryParts>
+<ArrayOfStoryPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StoryPart>
+    <Id>0</Id>
+    <SpValue>In darkness, I shall be light</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>1</Id>
+    <SpValue>In times of doubt, I shall keep faith</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>2</Id>
+    <SpValue>In throes of wrath, I shall hone my craft</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>3</Id>
+    <SpValue>In vengeance, I shall have no mercy</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>4</Id>
+    <SpValue>In the midst of battle, I shall have no fear</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>5</Id>
+    <SpValue>In the face of death, I shall have no remorse﻿</SpValue>
+    <SpType>quotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>6</Id>
+    <SpValue>fokkajoo</SpValue>
+    <SpType>myquotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>7</Id>
+    <SpValue>jokaf00</SpValue>
+    <SpType>myquotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>8</Id>
+    <SpValue>eeets creeezliii</SpValue>
+    <SpType>myquotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+  <StoryPart>
+    <Id>9</Id>
+    <SpValue>eeets mataphaccin creeezliii beeeeheesj</SpValue>
+    <SpType>myquotes</SpType>
+    <TimesPicked>0</TimesPicked>
+    <TimesPickable>0</TimesPickable>
+    <TimesNotPicked>0</TimesNotPicked>
+  </StoryPart>
+</ArrayOfStoryPart>

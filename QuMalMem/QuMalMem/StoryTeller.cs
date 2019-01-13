@@ -5,17 +5,17 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using System.Xml.Xsl;
 
 namespace QuMalMem
 {
     public static class StoryTeller
     {
-        private static Random rng = new Random();
+        public static Random rng = new Random(); //random number
 
-        //stackoverflow code to shuffle a list... any list i guess since it seems to just find out its type using "this"? - research
-        private static void Shuffle<T>(this IList<T> list)
-        {
+        public static void Shuffle<T>(this IList<T> list)
+        { //shuffle a passed list
             int n = list.Count;
             while (n > 1)
             {
@@ -25,170 +25,134 @@ namespace QuMalMem
                 list[k] = list[n];
                 list[n] = value;
             }
-        }
-        /* cba with public/private right now, just making xmldatalayer public
-        public static string Tellit()
+        }       
+
+        public class StoryPart
         {
-            return string.Join(", ",XmlDataLayer.LoadParts());
-        }
-        */
-        public static class XmlDataLayer 
-        {
-            //prototype example - i kinda feel like trying to set up a list that just has all parts and seeing how working with that would be in comparison
-            public static List<Storypart> LoadParts(string typeofparts)
+            public int Id { get; set; }
+            public string SpValue { get; set; }
+            public string SpType { get; set; }
+            public int TimesPicked { get; set; }
+            public int TimesPickable { get; set; }
+            public int TimesNotPicked { get; set; }
+
+            public StoryPart() { } //needed for serialization, unsure why tbh
+
+            public StoryPart(int id, string spValue, string spType, int timesPicked, int timesPickable)
+            { //the normal constructor
+                this.Id = id;
+                this.SpValue = spValue;
+                this.SpType = spType;
+                this.TimesPicked = timesPicked;
+                this.TimesPickable = timesPickable;
+                this.TimesNotPicked = this.TimesPickable - this.TimesPicked; // remember that properties can be based on other properties
+            }            
+
+            // create new - only needs value and type since we calculate id and the times start at 0
+            // needs exception handling for the Id calc tho - if Allparts had nothing in it this would fail
+            public StoryPart(string spValue, string spType)
             {
-                List<Storypart> Parts = new List<Storypart>();
-                if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/DB.xml"))) 
-                {
-                    // Loading XML from a file with LINQ
-                    XElement root = XElement.Load(HttpContext.Current.Server.MapPath("~/Content/DB.xml"));
-
-                    IEnumerable<XElement> selector =
-                        from el in root.Elements("StoryPart")
-                        where (string)el.Attribute("type") == typeofparts
-                        select el;
-                    //"deserialize" xml nodes into our objects, putting them in a list. (is this really deserialization? seems only to be in spirit)
-                    foreach (XElement el in selector)
-                    {
-                        Parts.Add(new Storypart(
-                                    (int)el.Attribute("id"), 
-                                    (string)el.Attribute("value"), 
-                                    (string)el.Attribute("type"), 
-                                    (int)el.Attribute("picked"), 
-                                    (int)el.Attribute("pickable"))
-                                );
-                    }
-                }
-                else {
-                    //do some error handling for the missing xml - could just create a new file with a placeholder/error message storypart....
-                    // - maybe just the new file part otherwise we're using data for logic
-                }
-
-                return Parts;
-            }                  
-
-            //second iteration - list manipulation instead of data selection/query/where to eg get parts by type.
-            public static List<Storypart> PartsByType(string typeofpart) //filter master parts list down to those of the requested type
-            {
-                List<Storypart> Parts = new List<Storypart>(
-                    Allparts.FindAll(
-                        storypart => storypart.spType.Contains(typeofpart)
-                        )
-                );
-                return Parts;
+                //https://stackoverflow.com/questions/3309188/how-to-sort-a-listt-by-a-property-in-the-object
+                StoryXDL.Allparts.Sort((x, y) => x.Id.CompareTo(y.Id));
+                
+                this.Id = StoryXDL.Allparts.Last().Id + 1; //homebodged autoincrement
+                this.SpValue = spValue;
+                this.SpType = spType;
+                this.TimesPicked = 0;
+                this.TimesPickable = 0;
+                this.TimesNotPicked = 0;
             }
 
-        }
-
-        private static List<Storypart> Allparts = AllpartsGetter();   //like that i guess @ the line below. [went from using what is now allpartsgetter (theoretically) each time, to get it once... i think atleast? okay toot ired.
-                                                                      //get all our data, filter it later    -   having it read from xml each time seems wasteful though, what i want is a shared representation of this...
-        private static List<Storypart> AllpartsGetter()
-        {
-            List<Storypart> Parts = new List<Storypart>();
-
-            XElement root = XElement.Load(HttpContext.Current.Server.MapPath("~/Content/DB.xml"));
-
-            IEnumerable<XElement> selector = from el in root.Elements("StoryPart") select el;
-
-            foreach (XElement el in selector)
-            {
-                Parts.Add(new Storypart(
-                    (int)el.Attribute("id"),
-                    (string)el.Attribute("value"),
-                    (string)el.Attribute("type"),
-                    (int)el.Attribute("picked"),
-                    (int)el.Attribute("pickable"))
-                    );
-            }
-            return Parts;
-        }
-
-        public class Storypart
-        {
-            public int id;
-            public string spValue;
-            public string spType;
-            public int timesPicked;
-            public int timesPickable;
-            public int timesNotPicked;
-
-            public Storypart(int id, string spValue, string spType, int timesPicked, int timesPickable)
-            {
-                this.id = id;
-                this.spValue = spValue;
-                this.spType = spType;
-                this.timesPicked = timesPicked;
-                this.timesPickable = timesPickable;
-                this.timesNotPicked = this.timesPickable - this.timesPicked; // remember that properties can be based on other properties
-            }
-            /*
-            public Storypart(int ID)
-            {
-                DAL.StorypartsDataTable storyparts = spData.GetDataById(ID);
-
-                this.id = int.Parse(storyparts[0]["ID"].ToString());
-                this.spValue = storyparts[0]["spValue"].ToString();
-                this.spType = storyparts[0]["spType"].ToString();
-                this.timesPicked = int.Parse(storyparts[0]["timesPicked"].ToString());
-                this.timesPickable = int.Parse(storyparts[0]["timesRolled"].ToString());
-                this.timesNotPicked = this.timesPickable - this.timesPicked
-            }
-           
-
-            //dude, fuck giving objects dedicated methods just to change a value like inc viewcount - you have the object, the object can be changed, after which you update everything about the object - no need to run in circles
-            
-            public void Update()
-            {
-                spData.Update(this.spValue, this.spType, this.timesPicked, this.timesPickable, this.id, this.id);
-            }
-
-            //should work like this if i wanted to replace one item with another
-            public void Replace(int IDtoReplace)
-            {
-                spData.Update(this.spValue, this.spType, this.timesPicked, this.timesPickable, IDtoReplace, this.id);
-            }
-
-            //get a randomized list of a specified @length, of SPs of a @type  
-            public static string StorypartsTypeListChoices(int listlength, string type)
-            {
-                List<Storypart> StorypartList = new List<Storypart>();
-
-                foreach (DAL.StorypartsRow row in spData.GetDataByType(type))
-                {
-                    Storypart readStorypart = new Storypart(row.id, row.spValue, row.spType, row.timesPicked, row.timesRolled);
-                    StorypartList.Add(readStorypart);
-                }
-                //randomize list
-                StorypartList.Shuffle();
-                StorypartList.Take(3);
-
-                return WebSpinner(StorypartList);
-            }
-                         */
-            //essentaily a custom tostring or that but with a list 
-            private static string WebSpinner(List<Storypart> StoryPartsList)
-            {
-                string DatStringDoe = "";
-                if (StoryPartsList.Count == 0) { DatStringDoe = "invalid spType, probably"; }
-
-                foreach (Storypart storypart in StoryPartsList) { DatStringDoe += storypart.ToHtml(); }
-
-                return DatStringDoe;
-            }
+            public override string ToString() { return this.SpValue; } // mainly done for easy display in a listbox atm            
 
             public string ToHtml()
             {
-                string output = "<a href = '#'class='StoryPart type-" + this.spType + "'><span>";
-                output += this.spValue;
-                output += "</span></a>";
-                return output;
+                return "<a href = '#'class='StoryPart type-" + this.SpType + "'><span>" + this.SpValue + "</span></a>";
             }
-            public override string ToString()
-            {
-                return this.spValue;
+        }
+
+        public static class StoryXDL
+        {
+            public static List<StoryPart> LoadAllParts() // LoadAllParts - Deserializing XML with LINQ
+            {   
+                XElement root = XElement.Load(HttpContext.Current.Server.MapPath("~/Content/DB.xml"));
+
+                IEnumerable<XElement> selector =
+                    from el in root.Elements("StoryPart")
+                        // where (string)el.Attribute("type") == typeofparts 
+                    select el;
+
+                List<StoryPart> Parts = new List<StoryPart>();
+                foreach (XElement el in selector)
+                {
+                    Parts.Add(new StoryPart(
+                                (int)el.Element("Id"),
+                                (string)el.Element("SpValue"),
+                                (string)el.Element("SpType"),
+                                (int)el.Element("TimesPicked"),
+                                (int)el.Element("TimesPickable"))
+                            );
+                }
+                return Parts;
             }
 
+            public static void UpdateAll() // Serialize all StoryParts to XML and save on server
+            {  
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(Allparts.Serialize());
+
+                XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
+                string filelocation = HttpContext.Current.Server.MapPath("~/Content/DB.xml");
+
+                XmlWriter writer = XmlWriter.Create(filelocation, settings);
+                doc.Save(writer);
+                writer.Close(); //otherwise update fails second time
+            }
+
+            public static List<StoryPart> Allparts = StoryXDL.LoadAllParts();
+
+            public static List<StoryPart> OfType(string spType) { return Allparts.FindAll(StoryPart => StoryPart.SpType.Contains(spType)); }
+
+            public static StoryPart ById(int ID) { return Allparts.Find(StoryPart => StoryPart.Id.Equals(ID)); }
+
+            public static List<StoryPart> GetChoices(int listlength, string type) //get a randomized list of a specified @length, of SPs of a @type 
+            {
+                List<StoryPart> StoryPartList = new List<StoryPart>(OfType(type));
+                StoryPartList.Shuffle();
+
+                return StoryPartList.GetRange(0, listlength);
+            }
+
+            public static List<string> GetChoicesHTML(int listlength, string type) //get a randomized list of a specified @length, of SPs of a @type 
+            {
+                List<StoryPart> StoryPartList = new List<StoryPart>(OfType(type));
+                List<string> output = new List<string>();
+
+                output.Shuffle();
+
+                foreach (StoryPart StoryPart in StoryPartList)
+                {
+                    output.Add(StoryPart.ToHtml());
+                }
+
+                return output.GetRange(0, listlength);
+            }
         }
-        // also need a system for including storyparts within storyparts, symbol-key filter looping kinda shit[.join?]
+
+        public static string Serialize<T>(this T value)  //with try/catch for improved debugging aka exception handling
+        { 
+            if (value == null) { return string.Empty; }
+            try
+                {
+                    var xmlserializer = new XmlSerializer(typeof(T));
+                    var stringWriter = new StringWriter();
+                    using (var writer = XmlWriter.Create(stringWriter))
+                    {
+                        xmlserializer.Serialize(writer, value);
+                        return stringWriter.ToString();
+                    }
+                }
+            catch (Exception ex) { throw new Exception("An error occurred", ex);}
+        }
     }
 }
